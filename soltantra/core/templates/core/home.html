@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% load static %}
+
+    <title>Sol Tantra | Masajes y terapias</title>
+
+    <header>
+      <!-- Bootstrap -->
+      <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+      <!-- Fuentes -->
+      <link href="{% static 'core/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+      <link href="{% static 'core/https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i' %}" rel="stylesheet">
+      <link href="{% static 'core/https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i' %}" rel="stylesheet">
+
+      <!-- Estilos -->
+      <link href="{% static 'core/css/business-casual.css' %}" rel="stylesheet">
+
+      <div class="container">
+
+          <a href="#" class="logo">
+            <div class="container">
+              <img src="{% static 'core/img/cropped-header.png' %}" alt="logo de la compania" class="logo-img" >
+              <h2 class="nombre-empresa">
+              </h2>
+          </a>
+      </div>
+
+      </div>
+    </header>
+
+    <!-- Navegación -->
+    
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="home.html">Sol tantra</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="home.html">Inicio</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="masajes.html">Masajes</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="clases.html">Clases</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="practicas.html">Prácticas</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="masajistas.html">Masajistas</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="nosotros.html">Nosotros</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="reserva.html">Reserva</a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="tienda.html">Tienda</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>    
+
+  </head>
+
+
+  <body>
+ 
+      <h1 class="site-heading text-center text-white d-none d-lg-block">
+        <span class="site-heading-upper text-primary mb-3">El despertar la conciencia con el cuerpo como medio</span></br>
+        <span class="site-heading-lower">Tantra y sensualidad conciente</span>
+      </h1>
+      <div class="container" style="text-align: center;">
+        <div class="intro-button mx-auto" >
+          <a class="btn btn-primary btn-xl" href="store.html">CONTACTANOS</a>
+        </div>
+      </div>
+    <br>
+
+    <!-- Cabecera -->
+    <section>
+      <div class="container">     
+        <div class="page-content">
+          <div class="tab" style="text-align: center;">
+            <button class="tablinks" onclick="openCity(event, 'London')">Elige a tu terapeuta</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Escoge tu masaje</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Elige tu lugar</button>
+            <button class="tablinks" onclick="openCity(event, 'Santiago')">Mas que masajes</button>
+          </div>
+        
+        <!-- Tab content -->
+        <div id="London" class="tabcontent" style="text-align: center;">
+          <p style="color: yellow;">Atendemos a hombres, mujeres y parejas. Independiente de cual sea tu género, preferencia u orientación sexual, podrás escoger deseas ser atendido por un hombre o mujer</p>
+        </div>
+        
+        <div id="Paris" class="tabcontent"style="text-align: center;">
+          <p style="color: orange ;">Hemos desarrollado diferentes opciones para que encuentres la que más te acomoda.</p>
+        </div>
+        
+        <div id="Tokyo" class="tabcontent"style="text-align: center;">
+          <p style="color: chocolate;">Tú decides…. si venir a nuestra consulta o que él o la terapeuta te visite en donde te encuentres.</p>
+        </div>
+
+        <div id="Santiago" class="tabcontent"style="text-align: center;">
+          <p style="color: firebrick;">También puedes acceder a clases de masaje, talleres y prácticas, de manera individual, en pareja o grupales, online o presenciales.</p>
+        </div>
+      </div>
+
+
+        <script>
+          function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+          }
+          </script>
+
+
+          
+        <!-- Mensaje -->
+        <section class="page-section clearfix">
+          <style>
+            .grid-container {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              background-color: #2196F3;
+              padding: 10px;
+            }
+            .grid-item {
+              background-color: rgba(255, 255, 255, 0.8);
+              border: 1px solid rgba(0, 0, 0, 0.8);
+              padding: 20px;
+              font-size: 30px;
+              text-align: center;
+            }
+            </style>
+            </head>
+            <body>
+            
+        <div class="container">         
+          <div class="grid-container">
+            <div class="grid-item">
+              <h3>CONOCEME</h3>
+              <br>
+              <h4>Hola, mi nombre es Sol y es un placer tenerte por aquí. <br> Soy terapeuta y masajista tántrica, desde el año 2014 es que comencé con este viaje, <br> que inició como una exploración personal. <br> En el camino experimenté una transformación, mágica e indescriptible, a nivel físico, mental y emocional, la cual me cautivó de tal manera que decidí dedicarme por completo y hacer de esto mi principal actividad. <br>
+                Hoy con el pleno convencimiento de que el tantra y puntualmente el masaje tantrico es una herramienta que te permite conectar con tus más profundas 
+                emociones a través de las sensaciones y además es perfectamente posible compartirlo con un otro, he abierto mis alas para acompañarte en este viaje 
+                de auto descubrimiento, en donde la piel, sólo será el vehículo para llegar a lo más profundo de tu ser…</h4></div>
+            <div class="grid-item"><img class="intro-img img-fluid" src="{% static 'core/img/sol.png' %}"></div>
+            <div class="grid-item">
+              <h3>Hoy Sol Tantra, se ha convertido en un proyecto colectivo, en donde masajistas y profesionales de diferentes áreas hacen posible 
+                la exploración del cuerpo mediante diferentes practicas que ayudan al desarrollo de la conciencia.</h3></div>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+ 
+  </section>
+
+
+<section>
+
+  <div class="container">   
+      <div class="container">
+
+          <h1 style="color: orange; text-align: center;">
+            Servicios
+          </h1>
+          <h2 style="color: white; text-align: center;">Nuestros servicios son una experiencia completa y una invitación a conectar con el proceso.</h2>
+      </div>
+      <br>
+      <br>
+      <div class="grid-container">
+        <div class="grid-item">
+          <h3>Masajes</h3>
+          <br>
+          <h4>El masaje es una gran herramienta terapéutica y de exploración, que revela a través de cada sensación los misterios de nuestro cuerpo, dejándote en un estado de relajación y restauración; no solo corporal, también mental y anímicamente, que suele durar varios días después de vivida la experiencia.</h4>
+        </div>
+        <div class="grid-item">
+          <h3>Clases y talleres</h3>
+          <br>
+          <h4>Los encontrarás en video en nuestra web y también en formato presencial y online (en tiempo real). La distancia ya no es un motivo para no aprender. Puedes tomarlos de manera individual, en pareja o grupal.</h4>
+        </div>
+        <div class="grid-item">
+          <h3>Practicas</h3>
+          <br>
+          <h4>Ya sea que te sientas cómodo o cómoda en grupo, prefieras una practica individual o quizás en pareja. Puedes consultarnos que prácticas se encuentran disponibles y escoger a tu facilitador o facilitadora..</h4>
+        </div>
+      </div>
+    </div>
+</section> 
+
+<section>
+
+
+  <div class="container">
+      <section>
+        <br>
+        <br>
+        <div class="container">
+            <h1 style="color: orange; text-align: center;">
+              Nuestro Staff
+            </h1>
+        </div>
+        <br>
+        <br>
+        <div class="grid-container">
+          <div class="grid-item">
+            <h3>Sol-Terapeuta</h3>
+            <br>
+            <h4>Terapeuta que inicia el proyecto en 2017, reconocida y recomendada por su dedicación y excelente masaje que reconforta el alma y cuerpo.</h4>
+          <div class="grid-item"><img class="intro-img img-fluid" src="{% static 'core/img/sol2.jpg' %}"></div>  
+          </div>
+          <div class="grid-item">
+            <h3>Masajista Ely</h3>
+            <br>
+            <h4>Terapeuta holística y masoterapeuta profesional, con 13 años de experiencias en masajes terapéuticos y de relajación</h4>
+            <div class="grid-item"><img class="intro-img img-fluid" src="{% static 'core/img/ely1.jpg' %}"></div>
+          </div>
+          <div class="grid-item">
+            <h3>Yori</h3>
+            <br>
+            <h4>Descripción Yori</h4>
+            <div class="grid-item"><img class="intro-img img-fluid" src="{% static 'core/img/ely1.jpg' %}"></div>
+          </div>
+          <div class="grid-item">
+            <h3>Romy</h3>
+            <br>
+            <h4>Descripción Romy</h4>
+            <div class="grid-item"><img class="intro-img img-fluid" src="{% static 'core/img/ely1.jpg' %}"></div>
+          </div>
+          <div class="grid-item">
+            <h3>Nico</h3>
+            <br>
+            <h4>Descripción Nico</h4>
+            <div class="grid-item"><img class="intro-img img-fluid" src="{% static 'core/img/ely1.jpg' %}"></div>
+          </div>
+          <div class="grid-item">
+            <h3>Jorge</h3>
+            <br>
+            <h4>Descripción Jorge</h4>
+            <div class="grid-item"><img class="intro-img img-fluid" src="{% static 'core/img/ely1.jpg' %}"></div>
+          </div>
+        </div>
+      </section> 
+  </div>
+
+<section>
+
+
+<br>
+<br>
+  <section>
+
+    <div class="container">         
+        <div class="grid-container">
+            <div class="grid-item">
+              <h3>Donde atendemos...</h3>
+              <br>
+              <h4>Atención en consulta, domicilio y hoteles <br><br>
+              <br> Nuestra consulta se encuentra en Barcelona con Pedro de Valdivia. Emplazada en la comuna de Providencia<br> 
+              <br> Discreción y privacidad <br> 
+              <br>Cuidados<br>
+              <br>Realizamos sanitización constantemente, para que puedas disfrutar de un grato momento.<br> 
+
+              <br>Puedes tomar una ducha antes y después de tu experiencia, contamos con todas las comodidades. <br>
+
+              <br>Salud<br>
+              <br>La salud es algo muy importante y por eso consideramos todas las medidas necesarias para salvaguardar la de nuestr@s pacientes y terapeutas.<br>
+
+              <br>Avísanos con anticipación si requieres de alguna medida especial para sentirte aún más cómodo o cómoda.<br>
+
+              <br>Debes saber… <br>
+
+              <br>Que destinamos un bloque de 1 hora 45 minutos por sesión.<br>
+
+              <br>El masaje tiene una duración de 1 hora completa, y los 45 minutos adicionales son para tener una conversación previa al masaje con tu terapeuta, 
+              además si necesitas o quieras tomar una ducha antes y/o después de tu masaje.<br>
+              <div class="grid-item"><img class="intro-img img-fluid" src="{% static 'core/img/ubicacion.png' %}"></div>
+          </div>
+        </div>
+
+    </div>
+  
+  <section>
+
+
+
+
+
+  
+    <!-- Pié de página -->
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <p class="m-0">
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	        <a href="#" class="link">
+	          <span class="fa-stack fa-lg">
+	            <i class="fa fa-circle fa-stack-2x"></i>
+	            <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+	          </span>
+	        </a>
+	    </p>
+        <p class="m-0 mbt">
+        	<a href="sample.html" class="link">Política de privacidad</a> ·
+        	<a href="sample.html" class="link">Aviso legal</a> ·
+        	<a href="sample.html" class="link">Cookies</a>
+		</p>
+        <p class="m-0 mbt1">&copy; Sol Tantra</p>
+      </div>
+	</footer>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  </body>
+
+</html>
