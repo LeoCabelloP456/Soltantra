@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="service2-detail">
+
+  <div class="service2-text">
+    <div class="service-content">
+      <h2>
+        Tantra y Relajación<br>
+        <span>(Nivel 1)</span>
+      </h2>
+
+      <p class="service-description">
+        Masaje que tiene un efecto de relajación profunda, realizado con
+        maniobras sutiles y superficiales prácticamente en todo el cuerpo
+        de pies a cabeza, dirigidas a armonizar el sistema nervioso,
+        eliminar el cansancio físico y desconectar la mente, logrando
+        así una profunda sensación de bienestar.
+      </p>
+
+      <div class="service-info">
+        <p><strong>Precio:</strong> $50.000</p>
+        <p><strong>Duración:</strong> 1 hora</p>
+      </div>
+
+      <a href="#reserva" class="btn-reserva">
+        Reserva tu hora aquí →
+      </a>
+    </div>
+  </div>
+
+  <div class="vertical-line"></div>
+
+  <div class="hero-image">
+    <img src="{% static 'core/img/masajeHombres1.jpg' %}" alt="Tantra Nivel 1">
+  </div>
+
+</section>
+
+{% endblock %}

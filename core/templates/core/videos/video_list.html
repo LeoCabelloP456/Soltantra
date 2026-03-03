@@ -1,0 +1,80 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="page-width">
+  <div class="videos-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="videos-sidebar">
+      <h3 class="filter-title">
+        Filtrar por
+        <button
+          type="button"
+          id="priceToggle"
+          class="filter-toggle"
+        >−</button>
+      </h3>
+
+      <div id="priceFilter">
+        <label>Selecciona tipo de cambio</label>
+        <select id="currency">
+          <option value="CLP">CLP ($)</option>
+          <option value="USD">USD (US$)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="MXN">MXN (MX$)</option>
+          <option value="CRC">CRC (₡)</option>
+          <option value="BRL">BRL (R$)</option>
+          <option value="DOP">DOP (RD$)</option>
+          <option value="CAD">CAD (C$)</option>
+          <option value="ARS">ARS (AR$)</option>
+          <option value="AUD">AUD (A$)</option>
+        </select>
+
+        <p>
+          Precio máximo:
+          <strong id="priceValue">$ {{ max_price }}</strong>
+        </p>
+
+        <input
+          type="range"
+          id="priceRange"
+          min="{{ min_price }}"
+          max="{{ max_price }}"
+          value="{{ max_price }}"
+          step="100"
+        >
+      </div>
+    </aside>
+
+    <!-- RESULTADOS -->
+    <section class="videos-results">
+      <div class="collection-products" id="videoGrid">
+
+        {% for video in videos %}
+          <article
+            class="product-card video-card"
+            data-price="{{ video.precio }}"
+          >
+            <a href="{% url 'video_detail' video.slug %}">
+              <img src="{{ video.imagen.url }}" alt="{{ video.titulo }}">
+            </a>
+
+            <h3>{{ video.titulo }}</h3>
+
+            <p class="price">
+              <span class="currency-symbol">$</span>
+              <span class="price-value">{{ video.precio }}</span>
+            </p>
+          </article>
+        {% endfor %}
+
+      </div>
+    </section>
+
+  </div>
+</div>
+
+
+{% endblock%}

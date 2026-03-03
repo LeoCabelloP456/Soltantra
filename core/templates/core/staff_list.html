@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Equipo</h1>
+
+{% for member in members %}
+    <a href="{% url 'staff_detail' member.slug %}">
+        <h2>{{ member.nombre }}</h2>
+        <p>{{ member.cargo }}</p>
+    </a>
+{% empty %}
+    <p>No hay miembros activos.</p>
+{% endfor %}
+
+{% endblock %}

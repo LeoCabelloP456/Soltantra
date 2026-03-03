@@ -1,0 +1,64 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="staff-detail-container">
+
+    <div class="staff-detail-layout">
+
+        <!-- Columna izquierda -->
+        <div class="staff-image">
+            <img src="{{ member.imagen.url }}" alt="{{ member.nombre }}">
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="staff-info">
+
+            <h1>Terapeuta - {{ member.nombre }}</h1>
+
+            <p class="staff-description">
+                {{ member.descripcion }}
+            </p>
+
+            <div class="staff-columns">
+
+                <div class="staff-block">
+                    <h3>Masajes</h3>
+                    <p>{{ member.masajes|linebreaks }}</p>
+                </div>
+
+                <div class="staff-block">
+                    <h3>Servicios</h3>
+                    <p>{{ member.servicios|linebreaks }}</p>
+                </div>
+
+                <div class="staff-block">
+                    <h3>Para Aprender</h3>
+                    <p>{{ member.para_aprender|linebreaks }}</p>
+                </div>
+
+                <div class="staff-block">
+                    <h3>Acompañamiento Terapéutico</h3>
+                    <p>{{ member.acompanamiento_terapeutico|linebreaks }}</p>
+                </div>
+
+                <div class="staff-block">
+                    <h3>Horario de Atención</h3>
+                    <p>{{ member.horario_atencion|linebreaks }}</p>
+                </div>
+
+                <div class="staff-block">
+                    <h3>Idiomas</h3>
+                    <p>{{ member.idiomas }}</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

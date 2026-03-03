@@ -1,0 +1,71 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+    
+{% block content %}
+
+<section class="video-detail">
+        <div class="video-top-bar">
+        <div class="breadcrumb">
+          Inicio / {{ video.titulo }}
+        </div>
+          <div class="video-navigation">
+            {% if previous_video %}
+              <a href="{% url 'video_detail' previous_video.slug %}" class="nav-link"> <-- Previo </a>
+            {% endif %}
+
+
+            {% if next_video %}
+              <a href="{% url 'video_detail' next_video.slug %}" class="nav-link">  Próximo --> </a>
+            {% endif %}
+          </div>
+      </div> 
+  <div class="video-detail-layout">
+
+    <div class="video-image">
+      <img src="{{ video.imagen.url }}" alt="{{ video.titulo }}">
+    </div>
+
+    
+      <div id="priceFilter">
+        <label>Selecciona tipo de cambio</label>
+        <select id="currency">
+          <option value="CLP">CLP ($)</option>
+          <option value="USD">USD (US$)</option>
+          <option value="EUR">EUR (€)</option>
+          <option value="MXN">MXN (MX$)</option>
+          <option value="CRC">CRC (₡)</option>
+          <option value="BRL">BRL (R$)</option>
+          <option value="DOP">DOP (RD$)</option>
+          <option value="CAD">CAD (C$)</option>
+          <option value="ARS">ARS (AR$)</option>
+          <option value="AUD">AUD (A$)</option>
+        </select>
+      </div>
+
+    <div class="video-info">
+
+
+            <h1>{{ video.titulo }}</h1>
+
+              <p class="price">
+                <span class="currency-symbol">$</span>
+                <span class="price-value" data-price="{{ video.precio }}">{{ video.precio }}</span>
+              </p>
+              
+              <p class="description">
+              {{ video.descripcion }}
+            </p>
+
+            <form method="post" action="{% url 'add_to_cart' video.slug %}">
+              {% csrf_token %}
+              <button class="btn-add-cart">
+                Agregar al carrito
+              </button>
+            </form>
+        </div>
+
+  </div>
+</section>
+
+  {% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="service2-detail">
+
+  <div class="service2-text">
+    <div class="service2-content">
+      <h2>
+          Auto-toque Consciente<br>
+      </h2>
+
+      <p class="service2-description">
+       Una práctica auto exploratoria y amorosa de tu cuerpo, en donde mediante mi guía aprenderás de la autoestimulación de tu corporalidad por completo, elevando tu energía vital y descubriendo nuevas formas de darte placer.
+      Despertaras nuevas sensaciones recorriendo tu cuerpo, descentralizando el placer de los lugares comunes y abriéndote a un mundo de posibilidades del disfrute personal
+      </p>
+
+      <div class="service2-info">
+        <p><strong>Precio:</strong> $60.000</p>
+        <p><strong>Duración:</strong> 1 hora 30 minutos</p>
+      </div>
+
+      <a href="#reserva" class="btn-reserva">
+        Reserva tu hora aquí →
+      </a>
+    </div>
+  </div>
+
+  <div class="vertical-line"></div>
+
+  <div class="hero-image">
+    <img src="{% static 'core/img/autoToque.jpg' %}" alt="Auto toque Conciente">
+  </div>
+
+</section>
+
+{% endblock %}

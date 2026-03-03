@@ -1,0 +1,57 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+{% load socialaccount %}
+
+{% block content %}
+<p>ESTE ES MI LOGIN</P>
+<div class="container mt-5" style="max-width: 400px;">
+    <h3 class="text-center mb-4">Iniciar sesión</h3>
+
+    <!-- Mensajes de error -->
+    {% if form.errors %}
+        <div class="alert alert-danger text-center">
+            Usuario o contraseña incorrectos
+        </div>
+    {% endif %}
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <!-- Formulario de login por email -->
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Correo o usuario</label>
+            {{ form.username|add_class:"form-control" }}
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Contraseña</label>
+            {{ form.password|add_class:"form-control" }}
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mb-3">Entrar</button>
+    </form>
+
+    <p class="text-center">O inicia sesión con:</p>
+
+    <!-- Botones de login social -->
+    <div class="d-flex justify-content-center gap-2">
+        <a href="{% provider_login_url 'google' %}" class="btn btn-danger w-100">
+            <i class="fa fa-google me-2"></i> Google
+        </a>
+        <a href="{% provider_login_url 'facebook' %}" class="btn btn-primary w-100">
+            <i class="fa fa-facebook me-2"></i> Facebook
+        </a>
+    </div>
+
+    <!-- Link de registro y contraseña olvidada -->
+    <p class="text-center mt-3">
+        ¿No tienes cuenta? <a href="{% url 'account_signup' %}">Regístrate</a><br>
+        <a href="{% url 'account_reset_password' %}">Olvidé mi contraseña</a>
+    </p>
+</div>
+{% endblock %}

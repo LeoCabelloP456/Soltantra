@@ -1,0 +1,10 @@
+
+<article class="video-card">
+  <a href="{% url 'video_detail' video.slug %}">
+    <img src="{{ video.imagen.url }}" alt="{{ video.titulo }}">
+  </a>
+
+  <h3>{{ video.titulo }}</h3>
+  <p class="price">$ {{ video.precio }}</p>
+</article>
+

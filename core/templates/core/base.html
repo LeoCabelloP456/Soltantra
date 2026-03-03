@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% load static %}
+
+    <title>Sol Tantra | Masajes y terapias</title>
+            <!-- Bootstrap -->
+            <link href="{% static 'core/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+            <link rel="stylesheet" href="{% static 'core/css/videos.css' %}"> 
+
+            <!-- Fuentes -->
+            <link rel="stylesheet"
+                  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+                  integrity="sha512-..."
+                  crossorigin="anonymous"
+                  referrerpolicy="no-referrer"
+            />
+            <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+
+            <!-- Estilos -->
+            <link href="{% static 'core/css/business-casual.css' %}" rel="stylesheet">    
+            <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+  
+   </head>  
+   <script src="{% static 'js/currency.js'%}"></script>
+
+  <body>
+      <!-- Navegación -->
+    
+
+<header class="header-full py-3">
+  <div class="header-top">
+    
+    <a
+      href="https://www.google.com/maps/search/?api=1&query=Barcelona+esquina+Pedro+de+Valdivia+Providencia+Santiago"
+      target="_blank"
+      rel="noopener"
+      class="ubicacion"
+    >
+      <i class="fa fa-map-marker"></i>
+      Barcelona esquina Pedro de Valdivia, Providencia, Santiago
+    </a>
+
+    <a href="tel:+56993912573" class="telefono">
+      <i class="fa fa-phone"></i>
+      +56 9 9391 2573
+    </a>
+
+    <a href="mailto:sol.masajesyterapiastantra@gmail.com" class="correo">
+      <i class="fa fa-envelope"></i>
+      sol.masajesyterapiastantra@gmail.com
+    </a>
+
+    <div class="redes_sociales">
+      <a href="https://www.facebook.com/sol.contreras.141591/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://x.com/TantraSol" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/sol_tantra_chile" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@soltantrachile" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@solmasajestantricos" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+
+  </div>
+    <div class="header-logo-bar">
+      
+      <div class="header-left"></div>
+      <div class="header-center">
+        <img
+          src="{% static 'core/img/logo_empresa.jpg' %}"
+          alt="logo de la compania"
+          class="logo-img img-fluid">
+      </div>
+
+      <div class="header-right">
+        
+        <div class="login-area d-flex align-items-center gap-2">
+            {% if user.is_authenticated %}
+              <span class="me-2">Hola, <strong>{{ user.username }} </strong></span>
+              <a href="{% url 'account_logout' %}" class="btn btn-outline-light btn-sm"> Salir </a>
+            {% else %}
+              <a href="{% url 'account_login' %}" class="btn btn-outline-light btn-sm"> Login </a>
+            {% endif %}
+        </div>  
+      </div>
+    </div>
+
+</header>
+      
+      <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+        <div class="container-fluid px-4">
+          <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}" >Sol tantra</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item active px-lg-4">
+                <a class="nav-link active text-expanded" href="{% url 'home' %}" >Inicio</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle"
+                  href="#"
+                  id="masajesDropdown"
+                  aria-expanded="false">
+                  Masajes
+                </a>
+
+                <ul class="dropdown-menu">
+
+                  <!-- HOMBRES -->
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item submenu-toggle" href="#">Hombres</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'masajes_hombresnv1'%}">Nivel 1 - Para Hombre</a></li>
+                      <li><a class="dropdown-item" href="{% url 'masajes_hombresnv2'%}">Nivel 2 - Para Hombre</a></li>
+                      <li><a class="dropdown-item" href="{% url 'masajes_hombresnv3'%}">Nivel 3 - Para Hombre</a></li>
+                    </ul>
+                  </li>
+
+                  <!-- MUJERES -->
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item submenu-toggle" href="#">Mujeres</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'masajes_mujeresnv1'%}">Nivel 1 - Para Mujeres</a></li>
+                      <li><a class="dropdown-item" href="{% url 'masajes_mujeresnv2'%}">Nivel 2 - Para Mujeres</a></li>
+                      <li><a class="dropdown-item" href="{% url 'masajes_mujeresnv3'%}">Nivel 3 - Para Mujeres</a></li>
+                    </ul>
+                  </li>
+
+                  <!-- PAREJAS -->
+                  <li class="dropdown-submenu">
+                    <a class="dropdown-item submenu-toggle" href="#">Parejas</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'masajes_parejasguiado'%}">Guiado Tántrico</a></li>
+                      <li><a class="dropdown-item" href="{% url 'masajes_parejassimultaneo'%}">Masaje simultáneo en Pareja</a></li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </li>
+
+              <li class="nav-item dropdown px-lg-4">
+                <a class="nav-link dropdown-toggle"
+                  href="#"
+                  id="clasesDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+                  Clases
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'clases_individuales' %}">
+                      Clases Individuales
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'clases_pareja' %}">
+                      Clases en Pareja
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'video_list' %}">
+                      Clases en Video
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="{% url 'clases_online' %}">
+                      Clases Online
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown px-lg-4">
+                <a class="nav-link dropdown-toggle"
+                  href="#"
+                  id="practicasDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+                  Prácticas
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'practicas' %}">
+                      Auto-toque Conciente
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown px-lg-4">
+                <a class="nav-link dropdown-toggle"
+                  href="#"
+                  id="talleresDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+                  Talleres
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="{% url 'talleres' %}">
+                      Taller de Sexualidad Tántrica
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown px-lg-4">
+                <a class="nav-link dropdown-toggle"
+                  href="#"
+                  id="staffDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false">
+                  Staff
+                </a>
+                <ul class="dropdown-menu">
+                  {% for member in navbar_staff %}
+                    <li>
+                      <a class="dropdown-item" href="{% url 'staff_detail' member.slug %}">
+                        {{ member.cargo}} - {{member.nombre }}
+                      </a>
+                    </li>
+                  {% empty %}
+                    <li>
+                    <span class="dropdown=item"> Sin miembros</span>
+                    </li>   
+                  {% endfor %}
+                </ul>       
+              </li>
+              <li class="nav-item px-lg-4">
+                <a class="nav-link text-expanded" href="{% url 'reclutar' %}">Trabaja con nosotros</a>
+              </li>
+              <li class="nav-item px-lg-4">
+                <a class="nav-link text-expanded" href="{% url 'tienda' %}">Tienda</a>
+              </li>          
+              <li class="nav-item px-lg-4">
+                <a class="nav-link text-expanded" href="{% url 'reserva_online' %}">Reserva online</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>    
+
+    <!-- Contenido -->  
+ 
+    {% block content %} {% endblock %}
+
+ 
+
+    <!-- Pié de página -->
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <!--- <p class="m-0 mbt">
+          <a href="sample.html" class="link">Política de privacidad</a> ·
+          <a href="sample.html" class="link">Aviso legal</a> ·
+          <a href="sample.html" class="link">Cookies</a>
+        </p>-->
+        <p class="m-0 mbt1">&copy; 2026 Derechos Reservados - Sol Tantra SPA</p>
+      </div>
+  </footer>
+
+    <!-- Bootstrap -->
+    <script src="{% static 'core/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'core/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script>
+  document.querySelectorAll('.submenu-toggle').forEach(item => {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const submenu = this.nextElementSibling;
+      if (!submenu) return;
+
+      submenu.classList.toggle('show');
+    });
+  });
+  </script>
+  </body>
+
+</html>

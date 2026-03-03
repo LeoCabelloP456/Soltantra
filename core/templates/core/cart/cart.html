@@ -1,0 +1,62 @@
+{% extends "core/base.html" %}
+{% block content %}
+
+<h1>Carrito de compras</h1>
+
+{% if cart_items %}
+
+<table>
+    <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Cantidad</th>
+        <th>Subtotal</th>
+        <th>Eliminar</th>
+    </tr>
+
+    {% for item in cart_items %}
+    <tr>
+        <td>{{ item.video.titulo }}</td>
+
+        <td>$ {{ item.video.precio|floatformat:0 }}</td>
+
+        <td>
+            <form method="post" action="{% url 'update_cart' item.video.slug %}">
+                {% csrf_token %}
+                <input type="number" 
+                       name="quantity" 
+                       value="{{ item.quantity }}" 
+                       min="1" 
+                       style="width:60px;">
+                <button type="submit">Actualizar</button>
+            </form>
+        </td>
+
+        <td>$ {{ item.subtotal|floatformat:0 }}</td>
+
+        <td>
+            <form method="post" action="{% url 'remove_from_cart' item.video.slug %}">
+                {% csrf_token %}
+                <button type="submit">❌</button>
+            </form>
+        </td>
+        <td>
+            <form method="post" action="{% url 'apply_coupon' %}">
+                {% csrf_token %}
+                <input type="text" name "coupon_code" placeholder="Código promocional">
+                <button type="submit">Aplicar</button>
+            </form>
+        </td>        
+    </tr>
+    {% endfor %}
+
+</table>
+
+<h2>Total: $ {{ total|floatformat:0 }}</h2>
+<a href="{% url 'checkout' %}" class="btn-checkout">Finalizar compra</a>
+
+{% else %}
+    <p>Tu carrito está vacío.</p>
+{% endif %}
+
+{% endblock %}

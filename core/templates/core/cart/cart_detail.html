@@ -1,0 +1,69 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+<section class="cart-section">
+    <div class="cart-container">
+
+        <h1>Carrito de compras</h1>
+
+        {% if cart %}
+        <table>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Subtotal</th>
+                <th>Eliminar</th>
+            </tr>
+
+            {% for slug, item in cart.items %}
+            <tr>
+                <td>{{ item.title }}</td>
+                <td>${{ item.price }}</td>
+
+                <td>
+                    <form method="post" action="{% url 'update_cart' slug %}">
+                        {% csrf_token %}
+                        <button name="action" value="decrease">−</button>
+                        {{ item.quantity }}
+                        <button name="action" value="increase">+</button>
+                    </form>
+                </td>
+
+                <td>${{ item.subtotal }}</td>
+
+                <td>
+                    <form method="post" action="{% url 'remove_from_cart' slug %}">
+                        {% csrf_token %}
+                        <button type="submit">❌</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h3>Total: ${{ total }}</h3>
+
+        {% if discount > 0 %}
+        <p>Descuento: -${{ discount }}</p>
+        <h2>Total final: ${{ final_total }}</h2>
+        {% endif %}
+
+        <form method="post" action="{% url 'apply_coupon' %}">
+            {% csrf_token %}
+            <input type="text" name="coupon_code" placeholder="Código promocional">
+            <button type="submit">Aplicar</button>
+        </form>
+
+        <a href="{% url 'checkout' %}">
+            <button>Continuar al Checkout</button>
+        </a>
+
+        {% else %}
+        <p>Tu carrito está vacío.</p>
+        {% endif %}
+    </div>
+</section>
+
+{% endblock %}

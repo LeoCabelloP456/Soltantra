@@ -1,0 +1,233 @@
+
+    {% extends 'core/base.html' %}
+    {%load static %} 
+    
+    {% block content %}
+    <!-- Cabecera -->
+    <section>
+ 
+        <script>
+          function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+              tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+              tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+          }
+          </script>
+
+
+    </section>
+
+    <section class="hero-section">
+      <div class="hero-overlay">
+        <div class="hero-content">
+          <h1 class="hero-title">Tantra y Sexualidad Conciente</h1>
+          <p class="hero-subtitle">Soltantra - El despertar de la conciencia con el cuerpo como medio</p>
+            <div class="d-flex justify-content-center mt-4">
+                 <a href="#conoceme" class="btn btn-outline-light rounded-pill hero-btn">Conoce Soltantra</a>
+            </div>  
+        </div>
+      </div>
+      <div class="video container">
+        <iframe src="https://www.youtube.com/embed/ysz5S6PUM-U"
+        title="Video demo"
+        frameborder="0"
+        allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+   
+    <section>
+
+<section class="steps-section">
+  <div class="steps-container">
+
+    <div class="step">
+      <div class="icon">
+        <img src="{% static 'core/img/escogeTerapeuta.svg'%}" alt="Elige tu terapeuta">
+        <h5>ELIGE A TU TERAPEUTA</h5>
+        <p>Atendemos a hombres, mujeres y parejas. 
+          Independiente de cual sea tu genero, preferencia u orientación sexual, 
+          podrás escoger si deseas ser atendido por un masajista hombre o mujer.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="icon">
+        <img src="{% static 'core/img/escogeMasaje.svg' %}" alt="Escoge tu masaje">
+        <h5>ESCOGE TU MASAJE</h5>
+        <p>Hemos desarrollado diferentes opciones para que encuentres la que más te acomode, 
+          seas hombre, mujer o pareja.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="icon">
+        <img src="{% static 'core/img/eligeLugar.svg' %}" alt="Elige tu lugar">
+        <h5>ELIGE TU LUGAR</h5>
+        <p>Tú decides... si venir a nuestra consulta o que él o la terapeuta te visite en donde te encuentres, 
+          domicilio u hotel..</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="icon">
+        <img src="{% static 'core/img/masQueMasajes.svg' %}" alt="Más que masajes">
+        <h5>MÁS QUE MASAJES</h5>
+        <p>También puedes acceder a clases de masaje, talleres y prácticas, de manera individual, 
+          en pareja o grupales, online o presenciales..</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+            
+<section id="conoceme" class="about-section">
+  <div class="about-wrapper">
+
+  <section class="about-outer">
+    <div class="about-inner">
+      <div class="about-col text-left">
+        <div class="text-column">
+          <h1>Conóceme</h1>
+          <p>
+            Hola, mi nombre es Sol y es un placer tenerte por aquí. Soy terapeuta y masajista tántrica, 
+            desde el año 2014 es que comencé con este viaje, que inició como una exploración personal. 
+            En el camino experimenté una transformación, mágica e indescriptible, a nivel físico, mental y 
+            emocional, la cual me cautivó de tal manera que decidí dedicarme por completo y hacer de esto 
+            mi principal actividad. 
+
+            Hoy con el pleno convencimiento de que el tantra y puntualmente el masaje tantrico es una herramienta 
+            que te permite conectar con tus más profundas emociones a través de las sensaciones y además es 
+            perfectamente posible compartirlo con un otro, he abierto mis alas para acompañarte en este viaje 
+            de auto descubrimiento, en donde la piel, sólo será el vehículo para llegar a lo más profundo de tu ser...
+          </p>
+        </div>
+      </div>
+
+      <div class="about-col image-center">
+        <img src="{% static 'core/img/Sole_Conóceme.jpg' %}" alt="Sol Tantra">
+      </div>
+
+      <div class="about-col text-right">
+        <div class="text-column">
+          <h2>
+            Hoy Sol Tantra se ha convertido en un proyecto colectivo, en donde masajistas y profesionales de 
+            diferentes áreas hacen posible la exploración del cuerpo mediante diferentes practicas que ayudan al 
+            desarrollo de la conciencia.
+          </h2>
+        <div class="about-buttons">
+        <a href="https://wa.me/56993912573" target="_blank" class="btn btn-whatsapp">Hablemos
+          <i class="fa-brands fa-whatsapp ms-3"></i></a>
+        <a href="#contacto" class="about-btn secondary">Contáctanos</a>
+      </div>
+        </div>
+      </div>
+
+    </div> 
+    </div>
+  </section>
+</section>
+
+<section id="contacto" class="contact-section">
+
+  <!-- Columna izquierda -->
+<section class="services-section">
+
+  <!-- Franja superior clara -->
+  <div class="services-header">
+    <h2>Nuestros Servicios</h2>
+    <h4>Nuestros servicios son una experiencia completa y una invitación a conectar con el proceso.</h4>
+  </div>
+
+  <!-- Tarjetas -->
+  <div class="services-cards">
+
+    <div class="service-card">
+      <div class="service-icon-circle">
+        <div class="service-icon"></div>
+      </div>
+        <h3>Masajes</h3>
+        <p>
+          El masaje es una gran herramienta terapéutica y de exploración,
+          que revela a través de cada sensación los misterios de nuestro cuerpo,
+          dejándote en un estado de relajación y restauración.
+        </p>
+      
+  </div>
+
+    <div class="service-card">
+      <div class="service-icon-circle">
+        <div class="service-icon"></div>
+      </div>
+        <h3>Clases y Talleres</h3>
+        <p>
+          Los encontrarás en video en nuestra web y también en formato presencial
+          y online. Puedes tomarlos de manera individual, en pareja o grupal.
+        </p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-circle">
+          <div class="service-icon"></div>
+        </div>
+          <h3>Prácticas</h3>
+          <p>
+            Ya sea que te sientas cómodo o cómoda en grupo,
+            realizar una práctica individual o en pareja,
+            encontrarás opciones disponibles.
+          </p>
+      </div>
+  </div>
+</section>
+
+  <!-- Columna derecha -->
+  <div class="contact-form-bg">
+    <div class="contact-form-overlay">
+
+      <div class="contact-box">
+        <h2>Contáctanos</h2>
+
+        <form class="contact-form">
+
+          <div class="row">
+            <div class="field">
+              <label>Nombre</label>
+              <input type="text">
+            </div>
+
+            <div class="field">
+              <label>Apellido</label>
+              <input type="text">
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Email *</label>
+            <input type="email" required>
+          </div>
+
+          <div class="field">
+            <label>Mensaje</label>
+            <textarea rows="3"></textarea>
+          </div>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+    {% endblock %}
+ 
+  
+
